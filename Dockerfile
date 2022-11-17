@@ -6,11 +6,11 @@ RUN apt-get update && \
 
 WORKDIR /src
 
-COPY ./requirements.txt /src/requirements.txt
+COPY requirements.txt /src/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /src/requirements.txt
 
-COPY ./intro_esmerald /src/app
+COPY intro_esmerald /src/app
 
 COPY deployment/nginx.conf /etc/nginx/conf.d/
 COPY deployment/nginx.conf /etc/nginx/sites-enabled/default
